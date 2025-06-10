@@ -16,13 +16,13 @@ export default function SiteLayout({ children }: SiteLayoutProps) {
     <div className="flex flex-col min-h-screen">
       <AppHeader />
       {/* New Centered Logo Section */}
-      <div className="flex justify-center py-4 border-b bg-card"> {/* Added bg-card for consistency if needed */}
+      <div className="flex justify-center py-4 border-b bg-card">
         <Link href="/" aria-label="Institute of Tax Consultants in Israel Home">
           <Image
             src="http://www.ymas.org.il/App_Themes/default/Images/logo2.jpg"
             alt="Institute of Tax Consultants in Israel Logo"
-            width={243} // Last used dimensions
-            height={72}
+            width={365} 
+            height={108}
             priority // Important for LCP
             data-ai-hint="organization logo"
           />
