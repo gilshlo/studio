@@ -54,12 +54,14 @@ export default function AppSidebar() {
             if (!item.public && !isAuthenticated) return null; // Hide member items if not authenticated (concept)
             return (
               <SidebarMenuItem key={item.label}>
-                <Link href={item.href} asChild>
-                  <SidebarMenuButton className="w-full justify-start text-sm" tooltip={item.label}>
-                    <item.icon className="h-5 w-5 me-3" />
-                    <span>{item.label}</span>
-                  </SidebarMenuButton>
-                </Link>
+                <SidebarMenuButton
+                  href={item.href}
+                  className="w-full justify-start text-sm"
+                  tooltip={item.label}
+                >
+                  <item.icon className="h-5 w-5 me-3" />
+                  <span>{item.label}</span>
+                </SidebarMenuButton>
               </SidebarMenuItem>
             );
           })}
@@ -71,12 +73,14 @@ export default function AppSidebar() {
             <SidebarMenu>
               {memberNavItems.map((item) => (
                 <SidebarMenuItem key={item.label}>
-                  <Link href={item.href} asChild>
-                    <SidebarMenuButton className="w-full justify-start text-sm" tooltip={item.label}>
-                      <item.icon className="h-5 w-5 me-3" />
-                      <span>{item.label}</span>
-                    </SidebarMenuButton>
-                  </Link>
+                  <SidebarMenuButton
+                    href={item.href}
+                    className="w-full justify-start text-sm"
+                    tooltip={item.label}
+                  >
+                    <item.icon className="h-5 w-5 me-3" />
+                    <span>{item.label}</span>
+                  </SidebarMenuButton>
                 </SidebarMenuItem>
               ))}
             </SidebarMenu>
