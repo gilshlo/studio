@@ -4,7 +4,7 @@ import * as React from "react"
 import { Slot } from "@radix-ui/react-slot"
 import { VariantProps, cva } from "class-variance-authority"
 import { PanelLeft } from "lucide-react"
-import Link from 'next/link'; // Added import
+import Link from 'next/link';
 
 import { useIsMobile } from "@/hooks/use-mobile"
 import { cn } from "@/lib/utils"
@@ -535,13 +535,13 @@ const sidebarMenuButtonVariants = cva(
 )
 
 const SidebarMenuButton = React.forwardRef<
-  HTMLButtonElement, // The ref type remains HTMLButtonElement as Link asChild wraps it
+  HTMLButtonElement,
   React.ComponentProps<"button"> & {
     asChild?: boolean
     isActive?: boolean
     tooltip?: string | React.ComponentProps<typeof TooltipContent>
-    href?: string // New href prop
-    children?: React.ReactNode // Explicitly define children
+    href?: string
+    children?: React.ReactNode
   } & VariantProps<typeof sidebarMenuButtonVariants>
 >(
   (
@@ -552,8 +552,8 @@ const SidebarMenuButton = React.forwardRef<
       size = "default",
       tooltip,
       className,
-      href, // Destructure href
-      children, // Destructure children
+      href,
+      children,
       ...props
     },
     ref
@@ -568,14 +568,14 @@ const SidebarMenuButton = React.forwardRef<
         data-size={size}
         data-active={isActive}
         className={cn(sidebarMenuButtonVariants({ variant, size }), className)}
-        {...props} // onClick etc.
+        {...props} 
       >
         {children}
       </Comp>
     )
 
     const content = href ? (
-      <Link href={href} asChild legacyBehavior={false}>
+      <Link href={href} asChild>
         {buttonElement}
       </Link>
     ) : (
