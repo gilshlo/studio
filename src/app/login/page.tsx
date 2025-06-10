@@ -89,11 +89,9 @@ export default function LoginPage() {
                 )}
               />
               <div className="flex items-center justify-between text-sm">
-                <Link href="/forgot-password" legacyBehavior passHref>
-                  <a className="text-primary hover:underline">
-                    <KeyRound className="inline-block me-1 h-4 w-4" />
-                    שכחת סיסמה?
-                  </a>
+                <Link href="/forgot-password" className="text-primary hover:underline">
+                  <KeyRound className="inline-block me-1 h-4 w-4" />
+                  שכחת סיסמה?
                 </Link>
               </div>
               <Button type="submit" className="w-full" size="lg">
@@ -105,19 +103,15 @@ export default function LoginPage() {
         <CardFooter className="flex flex-col items-center space-y-4">
           <p className="text-sm text-muted-foreground">
             עדיין אין לך חשבון?{' '}
-            <Link href="/member-registration" legacyBehavior passHref>
-              <a className="font-semibold text-primary hover:underline">
-                <UserPlus className="inline-block me-1 h-4 w-4" />
-                הצטרף ללשכה
-              </a>
+            <Link href="/member-registration" className="font-semibold text-primary hover:underline">
+              <UserPlus className="inline-block me-1 h-4 w-4" />
+              הצטרף ללשכה
             </Link>
           </p>
           <p className="text-sm text-muted-foreground">
             צריך לחדש חברות?{' '}
-            <Link href="/membership-renewal" legacyBehavior passHref>
-              <a className="font-semibold text-primary hover:underline">
-                לחץ כאן לחידוש חברות
-              </a>
+            <Link href="/membership-renewal" className="font-semibold text-primary hover:underline">
+              לחץ כאן לחידוש חברות
             </Link>
           </p>
         </CardFooter>
