@@ -51,7 +51,7 @@ export default function AppSidebar() {
       <SidebarContent className="p-2">
         <SidebarMenu>
           {navItems.map((item) => {
-            if (!item.public && !isAuthenticated) return null; // Hide member items if not authenticated (concept)
+            if (!item.public && !isAuthenticated) return null; 
             return (
               <SidebarMenuItem key={item.label}>
                 <SidebarMenuButton
@@ -67,7 +67,7 @@ export default function AppSidebar() {
           })}
         </SidebarMenu>
 
-        {isAuthenticated && ( // Conceptual rendering for authenticated users
+        {isAuthenticated && ( 
           <>
             <div className="my-3 h-px w-full bg-sidebar-border" />
             <SidebarMenu>
@@ -88,7 +88,7 @@ export default function AppSidebar() {
         )}
       </SidebarContent>
       <SidebarFooter className="p-4 border-t">
-        {!isAuthenticated && ( // Show login if not authenticated (concept)
+        {!isAuthenticated && ( 
           <Link href="/login" asChild>
             <Button variant="default" className="w-full">
               <LogIn className="h-5 w-5 me-2" />
@@ -96,7 +96,7 @@ export default function AppSidebar() {
             </Button>
           </Link>
         )}
-         {isAuthenticated && ( // Show logout if authenticated (concept)
+         {isAuthenticated && ( 
           <Button variant="outline" className="w-full">
             <LogIn className="h-5 w-5 me-2 rotate-180" />
             התנתקות
