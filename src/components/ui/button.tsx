@@ -42,11 +42,20 @@ export interface ButtonProps
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   ({ className, variant, size, asChild = false, ...props }, ref) => {
     const Comp = asChild ? Slot : "button"
+    
+    // If 'asChild' is true (meaning 'Comp' is 'Slot'),
+    // we need to remove the 'asChild' prop from 'props' before spreading it onto 'Comp'.
+    // This is because the 'asChild' prop has already served its purpose by determining 'Comp'.
+    // If 'Slot' itself receives 'asChild=true' from these props, it will try to pass its own attributes
+    // (like href, onClick from a parent Link) to its first child, which can be problematic if that child is an icon.
+    // We want the Slot to use its default behavior of wrapping its children and applying props to that wrapper.
+    const { asChild: _asChildFromProps, ...restProps } = props;
+
     return (
       <Comp
         className={cn(buttonVariants({ variant, size, className }))}
         ref={ref}
-        {...props}
+        {...(asChild ? restProps : props)}
       />
     )
   }
