@@ -55,11 +55,9 @@ export default function AppSidebar() {
             return (
               <SidebarMenuItem key={item.label}>
                 <Link href={item.href} asChild>
-                  <SidebarMenuButton className="w-full justify-start text-sm" asChild tooltip={item.label}>
-                    <a>
-                      <item.icon className="h-5 w-5 me-3" />
-                      <span>{item.label}</span>
-                    </a>
+                  <SidebarMenuButton className="w-full justify-start text-sm" tooltip={item.label}>
+                    <item.icon className="h-5 w-5 me-3" />
+                    <span>{item.label}</span>
                   </SidebarMenuButton>
                 </Link>
               </SidebarMenuItem>
@@ -74,11 +72,9 @@ export default function AppSidebar() {
               {memberNavItems.map((item) => (
                 <SidebarMenuItem key={item.label}>
                   <Link href={item.href} asChild>
-                    <SidebarMenuButton className="w-full justify-start text-sm" asChild tooltip={item.label}>
-                      <a>
-                        <item.icon className="h-5 w-5 me-3" />
-                        <span>{item.label}</span>
-                      </a>
+                    <SidebarMenuButton className="w-full justify-start text-sm" tooltip={item.label}>
+                      <item.icon className="h-5 w-5 me-3" />
+                      <span>{item.label}</span>
                     </SidebarMenuButton>
                   </Link>
                 </SidebarMenuItem>
