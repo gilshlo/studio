@@ -16,6 +16,12 @@ const nextConfig: NextConfig = {
         port: '',
         pathname: '/**',
       },
+      {
+        protocol: 'http',
+        hostname: 'www.ymas.org.il',
+        port: '',
+        pathname: '/**',
+      },
     ],
   },
 };

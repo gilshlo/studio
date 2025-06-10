@@ -12,7 +12,7 @@ export default function AppHeader() {
           <SidebarTrigger className="md:hidden" />
           <Link href="/" className="flex items-center" aria-label="Institute of Tax Consultants in Israel Home">
             <Image
-              src="https://placehold.co/135x40.png" // Placeholder for the logo
+              src="http://www.ymas.org.il/App_Themes/default/Images/logo2.jpg" // Placeholder for the logo
               alt="Institute of Tax Consultants in Israel Logo"
               width={135} // Adjusted width based on 40px height and original aspect ratio
               height={40}
