@@ -6,6 +6,7 @@ import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { CalendarDays, Search, Filter, Tags, MapPin } from 'lucide-react';
+import Image from 'next/image';
 
 const events = [
   { id: "1", title: "כנס שנתי ליועצי מס 2024", description: "הכנס המרכזי של הלשכה עם מיטב המרצים והחידושים בתחום המיסוי בישראל.", category: "כנסים", date: "20-22 באוגוסט 2024", location: "מלון דן, אילת", imageUrl: "https://placehold.co/400x250.png", imageHint: "conference audience" },
