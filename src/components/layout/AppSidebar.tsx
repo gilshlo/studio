@@ -1,3 +1,4 @@
+
 import Link from 'next/link';
 import {
   SidebarContent,
@@ -89,7 +90,7 @@ export default function AppSidebar() {
       </SidebarContent>
       <SidebarFooter className="p-4 border-t">
         {!isAuthenticated && ( 
-          <Link href="/login">
+          <Link href="/login" passHref>
             <Button variant="default" className="w-full">
               <LogIn className="h-5 w-5 me-2" />
               כניסה / הרשמה
@@ -97,7 +98,7 @@ export default function AppSidebar() {
           </Link>
         )}
          {isAuthenticated && ( 
-          <Button variant="outline" className="w-full">
+          <Button variant="outline" className="w-full" onClick={() => console.log("Logout clicked")}> {/* Placeholder for logout */}
             <LogIn className="h-5 w-5 me-2 rotate-180" />
             התנתקות
           </Button>
