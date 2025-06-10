@@ -16,7 +16,7 @@ export default function AppHeader() {
         </div>
         <div className="flex items-center gap-3">
           {/* Placeholder for future Login/User Avatar */}
-          <Link href="/login" legacyBehavior passHref>
+          <Link href="/login">
             <Button variant="outline" size="sm" className="gap-2">
               <UserCircle className="h-5 w-5" />
               <span className="hidden sm:inline">כניסה</span>
