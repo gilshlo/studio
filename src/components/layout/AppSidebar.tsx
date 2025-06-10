@@ -89,7 +89,7 @@ export default function AppSidebar() {
       </SidebarContent>
       <SidebarFooter className="p-4 border-t">
         {!isAuthenticated && ( 
-          <Link href="/login" asChild>
+          <Link href="/login" aschild>
             <Button variant="default" className="w-full">
               <LogIn className="h-5 w-5 me-2" />
               כניסה / הרשמה
