@@ -54,7 +54,7 @@ export default function AppSidebar() {
             if (!item.public && !isAuthenticated) return null; // Hide member items if not authenticated (concept)
             return (
               <SidebarMenuItem key={item.label}>
-                <Link href={item.href} legacyBehavior passHref>
+                <Link href={item.href} asChild>
                   <SidebarMenuButton className="w-full justify-start text-sm" asChild tooltip={item.label}>
                     <a>
                       <item.icon className="h-5 w-5 me-3" />
@@ -73,7 +73,7 @@ export default function AppSidebar() {
             <SidebarMenu>
               {memberNavItems.map((item) => (
                 <SidebarMenuItem key={item.label}>
-                  <Link href={item.href} legacyBehavior passHref>
+                  <Link href={item.href} asChild>
                     <SidebarMenuButton className="w-full justify-start text-sm" asChild tooltip={item.label}>
                       <a>
                         <item.icon className="h-5 w-5 me-3" />
@@ -89,7 +89,7 @@ export default function AppSidebar() {
       </SidebarContent>
       <SidebarFooter className="p-4 border-t">
         {!isAuthenticated && ( // Show login if not authenticated (concept)
-          <Link href="/login" legacyBehavior passHref>
+          <Link href="/login" asChild>
             <Button variant="default" className="w-full">
               <LogIn className="h-5 w-5 me-2" />
               כניסה / הרשמה
