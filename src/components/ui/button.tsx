@@ -41,22 +41,24 @@ export interface ButtonProps
 }
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, variant, size, asChild = false, ...props }, ref) => {
+  ({ className, variant, size, asChild = false, ...buttonProps }, ref) => {
     const Comp = asChild ? Slot : "button"
     
-    // If 'asChild' (the Button's prop) is true, 'Comp' becomes Slot.
-    // We must ensure that the 'asChild' prop *from the Link component* (which is inside `props`)
-    // is not passed to the `Slot` component.
-    // So, we destructure `asChild` from `props` to get `restProps`.
-    const { asChild: _asChildFromLink, ...restProps } = props;
+    // If 'asChild' (the Button's own prop, set by the parent Link) is true, 
+    // 'Comp' becomes Slot.
+    // We must ensure that the 'asChild' prop from the parent Link (which is inside `buttonProps`)
+    // is not passed to the 'Slot' component.
+    // So, we destructure 'asChild' from `buttonProps` to get `restProps`.
+    const { asChild: _asChildFromParentLink, ...restProps } = buttonProps;
 
     return (
       <Comp
         className={cn(buttonVariants({ variant, size, className }))}
         ref={ref}
-        // If the Button's own `asChild` prop is true (Comp is Slot), pass `restProps`.
-        // Otherwise (Comp is button), pass the original `props`.
-        {...(asChild ? restProps : props)}
+        // If the Button's own `asChild` prop is true (meaning Comp is Slot),
+        // we pass `restProps` (which has the parent Link's asChild prop removed).
+        // Otherwise (Comp is "button"), we pass the original `buttonProps`.
+        {...(asChild ? restProps : buttonProps)}
       />
     )
   }
