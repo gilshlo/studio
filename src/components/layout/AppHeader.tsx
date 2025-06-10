@@ -14,8 +14,8 @@ export default function AppHeader() {
             <Image
               src="http://www.ymas.org.il/App_Themes/default/Images/logo2.jpg" 
               alt="Institute of Tax Consultants in Israel Logo"
-              width={162} // Enlarged by 120% (135 * 1.2)
-              height={48} // Enlarged by 120% (40 * 1.2)
+              width={243} 
+              height={72} 
               priority 
               data-ai-hint="organization logo"
             />
