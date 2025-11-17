@@ -556,11 +556,14 @@ const sidebarMenuButtonVariants = cva(
   }
 )
 
-type SidebarMenuButtonProps = (React.ComponentPropsWithoutRef<"button"> | React.ComponentPropsWithoutRef<"a">) & {
+type SidebarMenuButtonProps = {
   isActive?: boolean;
   tooltip?: string | React.ComponentProps<typeof TooltipContent>;
   href?: string;
-} & VariantProps<typeof sidebarMenuButtonVariants>;
+  className?: string;
+  children?: React.ReactNode;
+} & VariantProps<typeof sidebarMenuButtonVariants> &
+  Omit<React.ComponentPropsWithoutRef<"button">, "className">;
 
 
 const SidebarMenuButton = React.forwardRef<
@@ -582,24 +585,23 @@ const SidebarMenuButton = React.forwardRef<
   ) => {
     const { isMobile, state } = useSidebar();
 
-    const commonProps = {
+    const baseProps = {
       "data-sidebar": "menu-button",
       "data-size": size,
       "data-active": isActive,
       className: cn(sidebarMenuButtonVariants({ variant, size, className })),
-      ...rest,
     };
 
     let element;
     if (href) {
       element = (
-        <Link href={href} {...commonProps} ref={ref as React.Ref<HTMLAnchorElement>}>
+        <Link href={href} {...baseProps} ref={ref as React.Ref<HTMLAnchorElement>}>
           {children}
         </Link>
       );
     } else {
       element = (
-        <button type="button" {...commonProps} ref={ref as React.Ref<HTMLButtonElement>}>
+        <button type="button" {...baseProps} {...rest} ref={ref as React.Ref<HTMLButtonElement>}>
           {children}
         </button>
       );

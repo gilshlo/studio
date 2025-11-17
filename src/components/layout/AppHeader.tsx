@@ -14,12 +14,12 @@ export default function AppHeader() {
           {/* Logo removed from here */}
         </div>
         <div className="flex items-center gap-3">
-          <Link href="/login" asChild> {/* Modern Link usage with Button */}
-            <Button variant="outline" size="sm" className="gap-2">
+          <Button variant="outline" size="sm" className="gap-2" asChild>
+            <Link href="/login">
               <UserCircle className="h-5 w-5" />
               <span className="hidden sm:inline">כניסה</span>
-            </Button>
-          </Link>
+            </Link>
+          </Button>
         </div>
       </div>
     </header>
